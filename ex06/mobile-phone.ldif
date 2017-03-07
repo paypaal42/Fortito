@@ -1,0 +1,6 @@
+dn: uid=pringsta,ou=2017_paris,ou=2017,ou=paris,ou=people,dc=42,dc=fr
+changetype: modify
+replace: mobile
+mobile: 0750420087
+
+
