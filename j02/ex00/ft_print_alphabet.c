@@ -9,33 +9,33 @@
 /*   Updated: 2017/03/08 22:18:00 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_print_alphabet(void);
-int	ft_putchar(char c);
 
-int	ft_putchar(char c)
+void	ft_putchar(char c) // check if there is a ft_putchar in 42
 
 {
 	write(1, &c, 1);
-	return(0);
 }
 
 void	ft_print_alphabet(void)
 {
 	int i;
 
-	i = 0;
-	while(i < 26)
+  i = 'a'; 
+	while(i < 123)
 	{
-		ft_putchar('a' + i);
+		ft_putchar(i);
 		i++;
 	}
-	//ft_putchar('\n');
 }
-
+/*
 int	main()
 {
-	ft_print_alphabet();
+  printf("abcdefghijklmnopqrstuvwxyz");
+  putchar('\n'); 
+  ft_print_alphabet();
 }
+*/
