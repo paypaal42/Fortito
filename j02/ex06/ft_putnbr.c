@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers_proto.c                           :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/09 11:56:32 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/09 12:09:13 by pringsta         ###   ########.fr       */
+/*   Created: 2017/03/12 10:49:53 by pringsta          #+#    #+#             */
+/*   Updated: 2017/03/13 13:15:44 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+void	ft_putchar(char c);
 
-void	ft_print_numbers(void);
-//void	ft_putchar(char c);
-
-void	ft_print_numbers(void)
+void	ft_putnbr(int nb)
 {
-	int i;
+	unsigned int nb2;
 
-	i = '0';
-	while( i <= '9')
+	if (nb < 0)
 	{
-		putchar(i);
-		i++;
+		ft_putchar('-');
+		nb2 = nb * -1;
 	}
-}
-
-
-int main()
-{
-	ft_print_numbers();
+	else
+	{
+		nb2 = nb;
+	}
+	if (nb2 > 9)
+	{
+		ft_putnbr(nb2 / 10);
+	}
+	ft_putchar(nb2 % 10 + '0');
 }

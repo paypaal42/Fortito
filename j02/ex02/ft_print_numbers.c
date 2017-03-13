@@ -1,15 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers_proto.c                           :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/09 11:56:32 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/09 17:26:12 by pringsta         ###   ########.fr       */
+/*   Created: 2017/03/12 16:17:58 by pringsta          #+#    #+#             */
+/*   Updated: 2017/03/13 13:13:25 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	ft_print_numbers(void);
+
 void	ft_putchar(char c);
 
 void	ft_print_numbers(void)
@@ -17,10 +17,9 @@ void	ft_print_numbers(void)
 	int	i;
 
 	i = '0';
-	while(i <= '9')
+	while (i <= '9')
 	{
 		ft_putchar(i);
 		i++;
 	}
 }
-
