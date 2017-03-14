@@ -6,11 +6,9 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 21:30:11 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/14 12:15:42 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/03/14 13:22:47 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void	ft_putchar(char c);
 
 int		ft_strlen(char *str)
 {
@@ -20,7 +18,6 @@ int		ft_strlen(char *str)
 	while (str[i] != '\0')
 	{
 		i++;
-		ft_putchar(str[i]);
 	}
 	return (i);
 }

@@ -6,12 +6,17 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/11 21:15:56 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/11 21:18:54 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/03/14 13:21:26 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	*div = (a / b);
-	*mod = (a % b);
+	if (b == 0)
+		return ;
+	else
+	{
+		*div = (a / b);
+		*mod = (a % b);
+	}
 }
