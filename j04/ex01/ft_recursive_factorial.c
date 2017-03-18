@@ -1,48 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/03/15 08:26:40 by pringsta          #+#    #+#             */
+/*   Updated: 2017/03/18 10:24:15 by pringsta         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include	<stdio.h>
-#include	<time.h>
-
-int     ft_recursive_factorial(int nb)
+int		ft_recursive_factorial(int nb)
 {
-	int result;
-	int i;
-
-	i = 0;
-	result = 1;
-	if (i <  nb)
-	{ 	
-		ft_recursive_factorial(i++);
+	if (nb < 0)
+		return (0);
+	if (nb == 0 || nb == 1)
+		return (1);
+	if (nb > 12)
+		return (0);
+	if (nb > 2)
+	{
+		ft_recursive_factorial(nb - 1);
+		return (nb * ft_recursive_factorial(nb - 1));
 	}
-	return result;
+	else
+		return (2);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-void	 return_values(int nb)
-{
-	int i;
-
-	i = 0;
-	while ( i++ < nb)
-		printf("#%d: %d\n", i,ft_recursive_factorial(i));
-}
-
-int		main(void)
-{
-	return_values(3);
-	return (0);
-}
-

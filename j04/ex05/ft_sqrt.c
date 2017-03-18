@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/14 16:53:56 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/14 18:04:27 by pringsta         ###   ########.fr       */
+/*   Created: 2017/03/16 14:35:35 by pringsta          #+#    #+#             */
+/*   Updated: 2017/03/16 16:49:04 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<stdio.h>
-#include	<time.h>
-
-int		ft_iterative_factorial(int nb)
+int		ft_sqrt(int nb)
 {
-	return (nb * 2);
-}
+	int i;
+	int nb1;
 
-
-int		main(void)
-{
-	//clock_t begin = clock();
-	
-	ft_iterative_factorial(233243);
-
-	//clock_t end = clock();
-	//double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-	//printf("Time spent: %f seconds", time_spent * 1000);
+	i = 0;
+	nb1 = 0;
+	if (nb < 0)
+		return (0);
+	while (nb1 < nb)
+	{
+		i++;
+		nb1 = i * i;
+	}
+	return (nb1 == nb) ? (i) : (0);
 }
