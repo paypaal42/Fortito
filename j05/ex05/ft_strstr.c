@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
 char  *ft_strstr(char *str, char *to_find)
 {
   int i;
@@ -26,7 +24,8 @@ char  *ft_strstr(char *str, char *to_find)
     while (str[i] == to_find[j])
     {
       if (to_find[j + 1] == '\0')
-        return (str + i - j);
+      
+        return (str + i);
       i++;
       j++;
     }
