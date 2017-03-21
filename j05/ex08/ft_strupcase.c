@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 16:30:05 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/19 16:40:39 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/03/20 08:58:16 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ char	*ft_strupcase(char *str)
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
 			str[i] = str[i] - 32;
+		i++;
 	}
-	i++;
+	return (str);
 }

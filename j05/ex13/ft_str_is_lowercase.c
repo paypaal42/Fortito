@@ -6,33 +6,20 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 18:18:12 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/19 18:19:00 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/03/20 10:39:00 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_numeric(char *str);
-
-int		ft_strlength(char *str)
+int		ft_str_is_lowercase(char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-int		ft_str_is_numeric(char *str);
-{
-	int i;
-
-	i = 0;
-	if (str[i] == '\0')
-		return (1);
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z'))
-			i++;
+		if (str[i] > 'z' || str[i] < 'a')
+			return (0);
+		i++;
 	}
-	return (i == ft_strlength) ? (1) : (0);
+	return (1);
 }
