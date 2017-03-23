@@ -6,12 +6,9 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 18:09:36 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/21 17:21:19 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/03/22 12:17:44 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <unistd.h>
 
 void	ft_putchar(char c);
 
@@ -22,8 +19,7 @@ void	ft_putstr(char *str)
 	i = 0;
 	while (str[i])
 	{
-		//ft_putchar(str[i]);
-		putchar(str[i]);
+		ft_putchar(str[i]);
 		i++;
 	}
 }
@@ -42,66 +38,37 @@ int		paal_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-int		main(int argc, char **argv)
+void	strnspace(char *argv)
 {
-	int *i;
-	int *j;
-	int n;
-	int m;
-	int tmp;
-
-	n = 1;
-	m = 2;
-	i = &n;
-	j = &m;
-	argc = 3;	
-
-	while (*i < argc)
-		while (*j < argc)
-		{	
-			if (strcmp(argv[*i], argv[*j + 1]) > 0)
-			{
-				tmp = *j;
-				*j = *i;
-				*i = tmp;
-			}
-		j++;
-		}
-	i++;
-	}	
-	return (0);
+	ft_putstr(argv);
+	ft_putchar('\n');
 }
 
+int		main(int argc, char **argv)
+{
+	int		i;
+	int		j;
+	char	*tmp;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	i = 1;
+	j = 2;
+	while (i < argc)
+	{
+		while (j < argc)
+		{
+			if (paal_strcmp(argv[i], argv[j]) > 0)
+			{
+				tmp = argv[i];
+				argv[i] = argv[j];
+				argv[j] = tmp;
+			}
+			j++;
+		}
+		i++;
+		j = i + 1;
+	}
+	i = 1;
+	while (i < argc)
+		strnspace(argv[i++]);
+	return (0);
+}

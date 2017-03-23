@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/20 16:13:15 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/20 16:35:36 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/03/23 11:04:51 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ void	ft_putstr(char *str)
 
 int		main(int argc, char **argv)
 {
-	if (argc == 2)
-	{
-		ft_putstr(argv[1]);
-	}
+	argc = 0;
+	ft_putstr(argv[0]);
+	ft_putchar('\n');
 	return (0);
 }
