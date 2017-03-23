@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <unistd.h>
 
 char  *ft_strrev(char *str)
 {
   int i;
   int j;
+  int k;
   char *dest;
 
   j = 0;
@@ -12,7 +12,7 @@ char  *ft_strrev(char *str)
   while (str[i])
     i++;
   i--;
-  while (i >= 0)
+  while (i >= k)
   {
     dest[j] = str[i];
     i--;
