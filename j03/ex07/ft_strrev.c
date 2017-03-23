@@ -21,9 +21,3 @@ char  *ft_strrev(char *str)
   dest[j] = '\0';
   return (dest);
 }
-
-int main(void)
-{
-  printf("%s\n", ft_strrev("paal"));
-  return (0);
-}
