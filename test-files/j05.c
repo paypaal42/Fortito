@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   j05.c                                              :+:      :+:    :+:   */
+/*   j05-FINAAAAALLL.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gduron <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/12 18:04:57 by gduron            #+#    #+#             */
-/*   Updated: 2017/03/14 10:01:12 by gduron           ###   ########.fr       */
+/*   Updated: 2017/03/21 20:59:18 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "ft_putchar.c"
 
-void ft_putchar(char c);
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
-#include "../j05/ex00/ft_putstr.c"
-#include "../j05/ex01/ft_putnbr.c"
-#include "../j05/ex02/ft_atoi.c"
-#include "../j05/ex03/ft_strcpy.c"
-#include "../j05/ex04/ft_strncpy.c"
-#include "../j05/ex05/ft_strstr.c"
-#include "../j05/ex06/ft_strcmp.c"
-#include "../j05/ex07/ft_strncmp.c"
-#include "../j05/ex08/ft_strupcase.c"
-#include "../j05/ex09/ft_strlowcase.c"
-#include "../j05/ex10/ft_strcapitalize.c"
-#include "../j05/ex11/ft_str_is_alpha.c"
-#include "../j05/ex12/ft_str_is_numeric.c"
-#include "../j05/ex13/ft_str_is_lowercase.c"
-#include "../j05/ex14/ft_str_is_uppercase.c"
-#include "../j05/ex15/ft_str_is_printable.c"
-#include "../j05/ex16/ft_strcat.c"
-#include "../j05/ex17/ft_strncat.c"
-//#include "../j05/ex18/ft_
+#include "j05-FINAAAAALLL/ex00/ft_putstr.c"
+#include "j05-FINAAAAALLL/ex01/ft_putnbr.c"
+#include "j05-FINAAAAALLL/ex02/ft_atoi.c"
+#include "j05-FINAAAAALLL/ex03/ft_strcpy.c"
+#include "j05-FINAAAAALLL/ex04/ft_strncpy.c"
+#include "j05-FINAAAAALLL/ex05/ft_strstr.c"
+#include "j05-FINAAAAALLL/ex06/ft_strcmp.c"
+#include "j05-FINAAAAALLL/ex07/ft_strncmp.c"
+#include "j05-FINAAAAALLL/ex08/ft_strupcase.c"
+#include "j05-FINAAAAALLL/ex09/ft_strlowcase.c"
+#include "j05-FINAAAAALLL/ex10/ft_strcapitalize.c"
 
-int main()
+#include "j05-FINAAAAALLL/ex11/ft_str_is_alpha.c"
+#include "j05-FINAAAAALLL/ex12/ft_str_is_numeric.c"
+#include "j05-FINAAAAALLL/ex13/ft_str_is_lowercase.c"
+#include "j05-FINAAAAALLL/ex14/ft_str_is_uppercase.c"
+#include "j05-FINAAAAALLL/ex15/ft_str_is_printable.c"
+#include "j05-FINAAAAALLL/ex16/ft_strcat.c"
+#include "j05-FINAAAAALLL/ex17/ft_strncat.c"
+#include "j05-FINAAAAALLL/ex18/ft_strlcat.c"
+#include "j05-FINAAAAALLL/ex19/ft_strlcpy.c"
+
+int		main(void)
 {
 	printf("EX00 :\n");
 	char *str = "RESULT: I AM PRINTED";
@@ -137,7 +141,8 @@ int main()
 	printf("\n_________________\nEX10 :\n");
 	char str_long[100] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
 	printf("\nSalut, Comment Tu Vas ? 42mots Quarante-Deux; Cinquante+Et+Un\n%s\n", ft_strcapitalize(str_long));
-
+	char str_long1[200] = "001a 01 a ...a.. ???a //a 000a 99a ::a :a @@@a AAAa [[[a ZZZa zza {{{a  0123456789 abcdefgijklmnopqrstuvwxyz .........abcdefg123 123qwe     01234$$$";
+	printf("\n001a 01 a ...a.. ???a //a 000a 99a ::a :a @@@a AAAa [[[a ZZZa zza {{{a  0123456789 abcdefgijklmnopqrstuvwxyz .........abcdefg123 123qwe     01234$$$\n%s\n", ft_strcapitalize(str_long1));
 	printf("\n_________________\nEX11 :\n");
 	printf("\ncoucou = %d", ft_str_is_alpha("coucou"));
 	printf("\nhell0 = %d", ft_str_is_alpha("hell0"));
@@ -152,15 +157,18 @@ int main()
 	printf("\nlowercase = %d", ft_str_is_lowercase("lowercase"));
 	printf("\nUPPERCASE = %d", ft_str_is_lowercase("UPPERCASE"));
 	printf("\n123456 = %d", ft_str_is_lowercase("123456"));
+	printf("\n = %d", ft_str_is_lowercase(""));
 
 	printf("\n_________________\nEX14 :\n");
 	printf("\nlowercase = %d", ft_str_is_uppercase("lowercase"));
 	printf("\nUPPERCASE = %d", ft_str_is_uppercase("UPPERCASE"));
 	printf("\n123456 = %d", ft_str_is_uppercase("123456"));
+	printf("\n = %d", ft_str_is_uppercase(""));
 
 	printf("\n_________________\nEX15 :\n");
 	printf("\nlowercase = %d", ft_str_is_printable("lowercase"));
 	printf("\nprintable = %d", ft_str_is_printable("UPPERCASE"));
+	printf("\n = %d", ft_str_is_printable(""));
 	printf("\n123456 = %d", ft_str_is_printable("123456"));
 	printf("\n\\12\\23\\127 = %d", ft_str_is_printable("\12\23\127"));
 
@@ -186,6 +194,47 @@ int main()
 	printf("ft | src = %s and dst = %s\n", "12345", ft_strncat(fdst72, "12345", 0));
 	printf("ft | src = %s and dst = %s\n", "abc", ft_strncat(fdst72, "abc", 5));
 
+	printf("\n_________________\nEX18 :\n");	
+	//char paal126[50] = "a2";
+	//char paal127[50] = "a";
+	//char paal128[50] = "a";
+	char paal40[50] = "";
+	char paal41[50] = "a";
+	char paal42[50] = "a";
+	char paal43[50] = "a";
+	char paal44[50] = "";
+	char paal45[50] = "a";
+	char paal46[50] = "a";
 
-//	printf("\n_________________\nEX18 :\n");
+
+	char paal50[50] = "123";
+
+
+	char paal131[50] = "a2";
+	char paal132[50] = "a";
+	char paal133[50] = "a";
+	char paal150[50] = "a2";
+	printf(".h : %lu\n", strlcat(paal50, "123", 7));	
+	printf("ft : %lu\n", strlcat(paal150, " hello1234", 0));
+	//printf(".h : %lu\n", strlcat(paal126, " hello1234", 0));
+	//printf(".h : %lu\n", strlcat(paal127, " hello1", 0));	
+	//printf(".h : %lu\n", strlcat(paal128, " hello2", 40));	
+	printf(".h : %lu\n", strlcat(paal40, "", 2));	
+	printf(".h : %lu\n", strlcat(paal41, "a", 0));	
+	printf(".h : %lu\n", strlcat(paal42, "b2", 0));	
+	printf(".h : %lu\n", strlcat(paal43, "", 1));	
+	printf(".h : %lu\n", strlcat(paal44, "a", 1));	
+	printf(".h : %lu\n", strlcat(paal45, " ab", 1));	
+	printf(".h : %lu\n", strlcat(paal46, " ab", 1));	
+	printf("ft : %d\n", ft_strlcat(paal131, " hello1234", 0));
+	printf("ft : %d\n", ft_strlcat(paal132, " hello1", 0));	
+	printf("ft : %d\n", ft_strlcat(paal133, " hello2", 40));
+	
+	printf("\n_________________\nEX18 :\n");	
+	char paal1123[50] = "abcdef123";
+	printf(".h : %lu\n", strlcpy(paal131, " hello1234", 1));
+	printf(".h : %lu\n", strlcpy(paal132, " hello", 40));	
+	printf("ft : %d\n", ft_strlcpy(paal1123, " hello", 50));
+	printf("ft : %d\n", ft_strlcpy(paal1123, " hello", 40));	
+	return (0);
 }
