@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/19 16:30:05 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/19 16:43:05 by pringsta         ###   ########.fr       */
+/*   Created: 2017/03/20 09:00:50 by pringsta          #+#    #+#             */
+/*   Updated: 2017/03/20 09:03:33 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int i;
 
@@ -19,6 +19,7 @@ char	*ft_strupcase(char *str)
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
 			str[i] = str[i] + 32;
+		i++;
 	}
-	i++;
+	return (str);
 }

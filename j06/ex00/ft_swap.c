@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/18 20:54:09 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/20 08:45:01 by pringsta         ###   ########.fr       */
+/*   Created: 2017/03/20 15:36:44 by pringsta          #+#    #+#             */
+/*   Updated: 2017/03/22 08:44:52 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+void	ft_swap(int *a, int *b)
 {
-	unsigned int i;
+	int tmp;
 
-	i = 0;
-	while (i < n && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }

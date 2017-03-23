@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/18 20:54:09 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/20 08:45:01 by pringsta         ###   ########.fr       */
+/*   Created: 2017/03/22 15:26:58 by pringsta          #+#    #+#             */
+/*   Updated: 2017/03/23 12:08:21 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+#include <stdlib.h>
+
+int		ft_ultimate_range(int **range, int min, int max)
 {
-	unsigned int i;
+	int size;
+	int i;
+	int *paal;
 
 	i = 0;
-	while (i < n && src[i])
+	size = max - min;
+	if (size <= 0)
+		return (0);
+	paal = (int*)malloc(sizeof(**range) * (size));
+	if (paal == NULL)
+		return (0);
+	while (i < size)
 	{
-		dest[i] = src[i];
+		paal[i] = min;
+		min++;
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (size);
 }

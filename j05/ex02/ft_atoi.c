@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 15:45:10 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/19 21:10:47 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/03/20 19:31:15 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int		ft_atoi(char *str)
 	i = 0;
 	negative = 0;
 	nb = 0;
-	while ((str[i] > 8 && str[i] < 33) || (str[i] >= 0 && str[i] < 7))
+	while ((str[i] > 8 && str[i] < 33) || (str[i] >= 0 && str[i] < 7)
+			|| str[i] == 127)
 		i++;
 	if (str[i] == '-')
 		negative = 1;
@@ -30,5 +31,5 @@ int		ft_atoi(char *str)
 		nb = nb * 10 + str[i] - '0';
 		i++;
 	}
-	return (negative ? -nb : nb);
+	return (negative) ? (-nb) : (nb);
 }

@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/19 18:18:12 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/19 18:21:46 by pringsta         ###   ########.fr       */
+/*   Created: 2017/03/20 21:03:54 by pringsta          #+#    #+#             */
+/*   Updated: 2017/03/20 21:04:02 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_numeric(char *str);
-
-int		ft_strlength(char *str)
+int		ft_str_is_uppercase(char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-int		ft_str_is_numeric(char *str);
-{
-	int i;
-
-	i = 0;
-	if (str[i] == '\0')
-		return (1);
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		if ((str[i] >= 'A' && str[i] <= 'Z'))
-			i++;
+		if (str[i] > 'Z' || str[i] < 'A')
+			return (0);
+		i++;
 	}
-	return (i == ft_strlength) ? (1) : (0);
+	return (1);
 }
