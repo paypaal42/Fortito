@@ -1,21 +1,29 @@
+#include <stdio.h>
+
 char  *ft_strrev(char *str)
 {
   int i;
   int j;
   int k;
+  char *dest;
 
   j = 0;
   i = 0;
   while (str[i])
     i++;
   i--;
-  while (i >= j)
+  while (i >= k)
   {
-    k = str[i];
-    str[i] = str[j];
-    str[j] = k;
-    j++;
+    dest[j] = str[i];
     i--;
+    j++;
   }
-  return (str);
+  dest[j] = '\0';
+  return (dest);
+}
+
+int main(void)
+{
+  printf("%s\n", ft_strrev("paal"));
+  return (0);
 }
