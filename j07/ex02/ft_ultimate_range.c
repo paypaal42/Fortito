@@ -6,30 +6,40 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 15:26:58 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/23 12:08:21 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/03/28 20:38:22 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_ultimate_range(int **range, int min, int max)
+int		*ft_range(int min, int max)
 {
-	int size;
-	int i;
-	int *paal;
+	int		*table;
+	int		i;
+	long	size;
 
 	i = 0;
-	size = max - min;
-	if (size <= 0)
-		return (0);
-	paal = (int*)malloc(sizeof(**range) * (size));
-	if (paal == NULL)
-		return (0);
-	while (i < size)
+	if (min >= max)
+		return (NULL);
+	size = (long)max - (long)min;
+	if ((table = (int*)malloc(sizeof(table) * (size))) == NULL)
+		return (NULL);
+	while (min < max)
 	{
-		paal[i] = min;
+		table[i] = min;
 		min++;
 		i++;
 	}
+	return (table);
+}
+
+int		ft_ultimate_range(int **range, int min, int max)
+{
+	int size;
+
+	*range = ft_range(min, max);
+	size = max - min;
+	if (max <= min)
+		return (0);
 	return (size);
 }

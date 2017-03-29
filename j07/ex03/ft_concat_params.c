@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 12:15:35 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/23 21:00:26 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/03/27 19:27:23 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		ft_strlength(char *argv)
 	j = 0;
 	while (argv[j])
 		j++;
-	return (j + 1);
+	return (j);
 }
 
 int		ft_strings_length(int argc, char **argv)
@@ -76,7 +76,7 @@ char	*ft_concat_params(int argc, char **argv)
 			j++;
 			k++;
 		}
-		str1[k] = (b++ == argc) ? '\0' : '\n';
+		str1[k] = (b++ == (argc - 1)) ? '\0' : '\n';
 		k++;
 	}
 	return (str1);

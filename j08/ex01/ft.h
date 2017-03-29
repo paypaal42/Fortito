@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 21:51:59 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/27 16:35:43 by pringsta         ###   ########.fr       */
+/*   Created: 2017/03/27 07:58:46 by pringsta          #+#    #+#             */
+/*   Updated: 2017/03/28 17:03:42 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_H
+# define FT_H
 
-char	*ft_strdup(char *src)
-{
-	int		i;
-	int		j;
-	char	*str1;
+# include <unistd.h>
 
-	i = 0;
-	j = 0;
-	while (src[i])
-		i++;
-	str1 = (char*)malloc(sizeof(str1) * (i + 1));
-	if (str1 == NULL)
-		return (0);
-	while (src[j])
-	{
-		str1[j] = src[j];
-		j++;
-	}
-	str1[j] = '\0';
-	return (str1);
-}
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+int		ft_strcmp(char *s1, char *s2);
+int		ft_strlen(char *str);
+void	ft_swap(int *a, int *b);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 14:07:38 by pringsta          #+#    #+#             */
-/*   Updated: 2017/03/23 12:13:08 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/03/28 14:36:27 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 int		*ft_range(int min, int max)
 {
-	int *table;
-	long size;
+	int		*table;
+	int		i;
+	long	size;
 
+	i = 0;
 	if (min >= max)
-		return (0);
+		return (NULL);
 	size = (long)max - (long)min;
-	if ((table = (int*)malloc(sizeof(*table) * (size))) == NULL)
+	if ((table = (int*)malloc(sizeof(table) * (size))) == NULL)
 		return (NULL);
 	while (min < max)
 	{
-		table[min] = min;
+		table[i] = min;
 		min++;
+		i++;
 	}
 	return (table);
 }
