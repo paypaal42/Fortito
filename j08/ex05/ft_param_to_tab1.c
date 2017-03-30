@@ -5,7 +5,7 @@
 char				**ft_split_whitespaces(char *str);
 void				ft_show_tab(struct s_stock_par *par);
 
-int					ft_size_param(char *str)
+int					ft_strlength(char *str)
 {
 	int				i;
 
@@ -15,7 +15,7 @@ int					ft_size_param(char *str)
 	return (i);
 }
 
-char				*ft_copy(char *str, int length)
+char				*ft_strcpy(char *str, int length)
 {
 	int				i;
 	char			*dest;
@@ -34,18 +34,18 @@ char				*ft_copy(char *str, int length)
 struct s_stock_par	*ft_param_to_tab(int ac, char **av)
 {
 	int				i;
-	t_stock_par		*s_my_stock_par;
+	t_stock_par		*ptr_params;
 
 	i = 0;
-	s_my_stock_par = (t_stock_par *)malloc(sizeof(t_stock_par) * ac);
+	ptr_params = (t_stock_par *)malloc(sizeof(t_stock_par) * ac);
 	while (av[i])
 	{
-		s_my_stock_par[i].size_param = ft_size_param(av[i]);
-		s_my_stock_par[i].str = av[i];
-		s_my_stock_par[i].copy = ft_copy(av[i], ft_size_param(av[i]));
-		s_my_stock_par[i].tab = ft_split_whitespaces(av[i]);
+		ptr_params[i].size_param = ft_strlength(av[i]);
+		ptr_params[i].str = av[i];
+		ptr_params[i].copy = ft_strcpy(av[i], ft_strlength(av[i]));
+		ptr_params[i].tab = ft_split_whitespaces(av[i]);
 		i++;
 	}
-	s_my_stock_par[i].str = 0;
-	return (s_my_stock_par);
+	ptr_params[i].str = 0;
+	return (ptr_params);
 }
