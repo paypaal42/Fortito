@@ -1,11 +1,11 @@
-void  *memset(void *str, int c, size_t n)
+#include "libft.h"
+
+void  *ft_memset(void *str, int c, size_t len)
 {
-    int i;
-    
-    i = 0; 
-    while (str[i] && i < n)
-    {
-      str[i] == c;
-      i++;
-    }
+  unsigned char *dest;
+
+  dest = (unsigned char*)str;
+  while (len-- > 0)
+    *dest++ = (unsigned char)c;
+  return (str);
 }
