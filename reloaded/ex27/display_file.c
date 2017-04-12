@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 09:42:26 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/12 11:30:08 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/04/12 11:50:36 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ int	main(int ac, char **av)
 {
 
 	if (ac == 1)
-		write(2, "File name missing.", 18);
+		write(2, "File name missing.\n", 19);
 	if (ac > 2)
-		write(1, "Too many arguments.", 19);
+		write(1, "Too many arguments.\n", 20);
 	if (ac == 2)
 		read_input(av[1]);
 	return (0);
