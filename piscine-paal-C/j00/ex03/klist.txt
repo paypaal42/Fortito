@@ -1,5 +1,0 @@
-Credentials cache: API:FC52189E-3C7D-422A-82E7-04EC2EF4628B
-        Principal: pringsta@42.FR
-
-  Issued                Expires               Principal
-Mar  6 16:15:18 2017  Mar 13 16:15:18 2017  krbtgt/42.FR@42.FR
