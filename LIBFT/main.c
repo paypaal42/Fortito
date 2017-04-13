@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/13 12:07:13 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/13 12:38:34 by pringsta         ###   ########.fr       */
+/*   Created: 2017/04/13 11:31:20 by pringsta          #+#    #+#             */
+/*   Updated: 2017/04/13 12:16:53 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <string.h>
+#include "libft.h"
+#include <stdio.h>
 
-void	*ft_memset(void *b, int c, size_t len);
-
-typedef struct s_list
+int	main(void)
 {
-  void         *content;
-  size_t       content_size;
-  struct       s_list *next;
-}              t_list;
-
-#endif
+	unsigned char paal[20] = "OOOOOOOOOOOOOO";
+	printf("%s\n", ft_memset(paal, 97, 5));
+	return (0);
+}
