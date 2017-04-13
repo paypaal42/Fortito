@@ -1,17 +1,31 @@
-NAME = libft.a
+LIB = libft.a 
 
-SCR = 
+NAME = ./a.out
 
-PATH = src/
+SCR = $(wildcard /*.c) 
+
+SCR1 = ft_putchar.c \
+	   ft_memset.c 
+
+MAIN = main.c
 
 FLAGS = -Werror -Wall -Wextra 
 
-all: $(NAME)
+CC = gcc
 
-$(NAME)
+all: $(LIB)
 
-clean :
+$(LIB):
+	$(CC) $(SRC1) $(MAIN) $(FLAGS)
+	$(NAME)
 
-fclean : 
+clean: 
+	rm -rf *.o
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all
+
 
 

@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 11:31:20 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/13 12:16:53 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/04/13 14:45:59 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,12 @@
 
 int	main(void)
 {
-	unsigned char paal[20] = "OOOOOOOOOOOOOO";
-	printf("%s\n", ft_memset(paal, 97, 5));
+	int i;
+	unsigned char str[20] = "OOOOOOOOOOOOOO";
+	
+	i = 0;
+	printf("FT_PUTCAHR |--> %s\n", ft_memset(str, 97, 5));
+	while (str[i])
+		ft_putchar(str[i++]);
 	return (0);
 }
