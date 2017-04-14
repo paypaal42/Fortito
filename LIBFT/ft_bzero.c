@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/13 12:07:13 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/14 11:10:09 by pringsta         ###   ########.fr       */
+/*   Created: 2017/04/14 10:57:34 by pringsta          #+#    #+#             */
+/*   Updated: 2017/04/14 11:15:42 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <string.h>
-# include <unistd.h>
+#include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len);
-void	ft_putchar(char c);
-void    ft_bzero(void *s, size_t n);
-
-typedef struct s_list
+void	ft_bzero(void *s, size_t n)
 {
-  void         *content;
-  size_t       content_size;
-  struct       s_list *next;
-}              t_list;
-
-#endif
+	ft_memset(s, 0, n);
+}

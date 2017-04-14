@@ -4,10 +4,9 @@ FLAGS = -Werror -Wall -Wextra
 
 CC = gcc
 
-SRC_C = ft_memset.c ft_putchar.c
+SRC_C = $(wildcard *.c)
 
-SRC_O = ft_memset.o \
-		ft_putchar.o
+SRC_O = $(wildcard *.o) 
 
 LIB = -L. -lft
 
