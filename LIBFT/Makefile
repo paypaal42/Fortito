@@ -24,13 +24,15 @@ main:
 
 clean: 
 	rm -rf *.o
-	rm -rf .*.sw*
 	rm -rf ./a.out
+	rm -rf .*.sw*
 
 fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
 
-t: clean all main
+t: fclean all main
 
+norme:
+	norminette -R CheckForbiddenSourceHeader $(SRC_C) libft.h

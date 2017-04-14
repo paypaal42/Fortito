@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 11:31:20 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/14 14:34:07 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/04/14 19:03:00 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,19 @@
 
 int	main(int ac, char **av)
 {
-	int i;
+	size_t i;
 	(void)ac;
-	char *str1 = av[0];
-	(void)str1;
-	unsigned char str[20] = "IIIIIIIIIIIIIIIIIII";	
-	const char str_constant[20] = "II";	
 	i = 0;
-
-	printf("FT_PUTCAHR |--------------------------------\n\n");	
-	printf("FT_MEMSET |--> %s\n", ft_memset(str, 97, 5));
-	printf("FT_STRLEN |--> %zu\n", ft_strlen(str_constant));
-	printf("FT_STRDUP |--> %s\n", ft_strdup(str1));
-	bzero(str, 3);
-	while (i < 15)
-		putchar(str[i++]);
-	i = 0;
-	ft_bzero(str, 5);
-	while (i < 15)
-		putchar(str[i++]);
-	printf("\nBZERO |--> %s\n", str1);
+	char dst[10] = "11111";
+	char const src[20] = "2222222222222222";
+	char dst1[5] = "11111";
+	char const src1[20] = "2222222222222222";
+	printf("-----> %s\n", av[0]);
+	printf("%p\n", &*(dst + 9));
+	printf("%p\n", &*(dst + 11));
+	printf("%p\n", &*(src + 1));
+	printf("%p\n", &*(src + 16));
+	printf("%s\n", memcpy(dst, src, 11));
+	printf("%s\n", ft_memcpy(dst1, src1, 10));	
 	return (0);
 }
