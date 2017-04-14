@@ -24,12 +24,13 @@ main:
 
 clean: 
 	rm -rf *.o
+	rm -rf .*.sw*
+	rm -rf ./a.out
 
 fclean: clean
 	rm -rf $(NAME)
-	rm -rf ./a.out
 
 re: fclean all
 
-t: fclean all main
+t: clean all main
 

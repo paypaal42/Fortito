@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 11:31:20 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/14 11:16:14 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/04/14 14:34:07 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,15 @@ int	main(int ac, char **av)
 	int i;
 	(void)ac;
 	char *str1 = av[0];
-	unsigned char str[20] = "IIIIIIIIIIIIIIIIIII";
 	(void)str1;
+	unsigned char str[20] = "IIIIIIIIIIIIIIIIIII";	
+	const char str_constant[20] = "II";	
 	i = 0;
+
 	printf("FT_PUTCAHR |--------------------------------\n\n");	
 	printf("FT_MEMSET |--> %s\n", ft_memset(str, 97, 5));
+	printf("FT_STRLEN |--> %zu\n", ft_strlen(str_constant));
+	printf("FT_STRDUP |--> %s\n", ft_strdup(str1));
 	bzero(str, 3);
 	while (i < 15)
 		putchar(str[i++]);
