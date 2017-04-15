@@ -4,9 +4,9 @@ FLAGS = -Werror -Wall -Wextra
 
 CC = gcc
 
-SRC_C = $(wildcard *.c)
+SRC_C = $(wildcard ft_*.c)
 
-SRC_O = $(wildcard *.o) 
+SRC_O = $(wildcard ft_*.o) 
 
 LIB = -L. -lft
 
