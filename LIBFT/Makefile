@@ -12,6 +12,8 @@ LIB = -L. -lft
 
 MAIN = 1main.c
 
+MAIN2 = 1main_copy.c
+
 all: $(NAME)
 
 $(NAME):
@@ -21,6 +23,9 @@ $(NAME):
 
 main: 
 	$(CC) $(FLAGS) $(MAIN) $(LIB) && ./a.out
+
+main2: 
+	$(CC) $(FLAGS) $(MAIN2) $(LIB) && ./a.out
 
 clean: 
 	rm -rf *.o
@@ -33,6 +38,8 @@ fclean: clean
 re: fclean all
 
 t: fclean all main
+
+tt: fclean all main2
 
 norme:
 	norminette -R CheckForbiddenSourceHeader $(SRC_C) libft.h
