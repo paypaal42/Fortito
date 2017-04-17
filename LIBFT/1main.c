@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 11:31:20 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/15 11:43:10 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/04/17 12:17:58 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,32 +18,22 @@
 int	main(int ac, char **av)
 {
 	size_t i;
-	size_t a;
-	size_t b;
-	size_t c;
-	size_t d;
-
-	(void)ac;
 	i = 0;
+	(void)ac;
 	(void)av[0];
+	printf("------------------------------------------------------------>\n");	
+	char dst2[10] = "11111";
+	char const src2[20] = "2222a";
+	char dst3[10] = "11111";
+	char const src3[20] = "2222a";
+	printf("MEMCCPY --------> %s\n", memccpy(dst2, src2, 97 , atoi(av[1])));
+	printf("FT_MEMCCPY -----> %s\n", ft_memccpy(dst3, src3, 97, atoi(av[2])));	
+	printf("------------------------------------------------------------>\n");
 	char dst[10] = "11111";
-	a = sizeof(dst);
 	char const src[20] = "2222222222222222";
-	b = sizeof(src);
 	char dst1[10] = "33333";
-	c = sizeof(dst1);
 	char const src1[20] = "4444444444444444";
-	d = sizeof(src1);
-	printf("sizeof src-----> %zu\n", a);
-	printf("adresse src----> %p\n", src);
-	printf("sizeof dst-----> %zu\n", b);
-	printf("sizeof src1----> %zu\n", d);
-	printf("sizeof dst1----> %zu\n", c);
-	printf("---------------> %s\n", av[0]);
-	printf("MEMCPY --------> %s\n", memcpy(dst, src, atoi(av[2])));
-	printf("FT_MEMCPY -----> %s\n", ft_memcpy1(dst1, src1, atoi(av[1])));	
-	printf("MEMCPY --------> %p\n", dst);
-	printf("FT_MEMCPY -----> %p\n", dst1);
-	printf("FT_MEMCPY -----> %p\n", src1);
+	printf("MEMCPY --------> %s\n", memcpy(dst, src, atoi("9")));
+	printf("FT_MEMCPY -----> %s\n", ft_memcpy1(dst1, src1, atoi("9")));	
 	return (0);
 }

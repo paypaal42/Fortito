@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 11:31:20 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/15 11:43:10 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/04/17 12:03:42 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int	main(int ac, char **av)
 	printf("sizeof src1----> %zu\n", d);
 	printf("sizeof dst1----> %zu\n", c);
 	printf("---------------> %s\n", av[0]);
-	printf("MEMCPY --------> %s\n", memcpy(dst, src, atoi(av[2])));
-	printf("FT_MEMCPY -----> %s\n", ft_memcpy1(dst1, src1, atoi(av[1])));	
+	printf("MEMCPY --------> %s\n", memcpy(dst, src, atoi(av[1])));
+	printf("FT_MEMCPY -----> %s\n", ft_memcpy1(dst1, src1, atoi(av[2])));	
 	printf("MEMCPY --------> %p\n", dst);
 	printf("FT_MEMCPY -----> %p\n", dst1);
 	printf("FT_MEMCPY -----> %p\n", src1);

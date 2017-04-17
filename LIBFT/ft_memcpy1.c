@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 16:38:28 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/15 12:24:16 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/04/17 10:30:37 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,28 @@ void			*ft_memcpy1(void *restrict dst,
 	size_t		a;
 	size_t		b;
 	size_t		c;
+	size_t		i;
+	size_t		k;
 
 	a = sizeof(src);
 	b = *(&src + 1) - src;
 	c = sizeof(src) / sizeof(char);
 	src_str = src;
 	dst_str = dst;
-	printf("sizeof src-------> %zu\n", a);
+	k = sizeof(src_str);
+	i = 0;
+	/*printf("sizeof src-------> %zu\n", a);
 	printf("sizeof src-------> %zu\n", b);
 	printf("sizeof src-------> %zu\n", c);
 	printf("adresse src------> %p\n", src);
-	while (n > 0)
+	printf("sizeof src-------> %zu\n", k);
+	*/while (n > 0)
 	{
 		*dst_str++ = *src_str++;
 		n--;
 	}
+	while (*dst_str++)
+		i++;
+	*dst_str++ = '\0';
 	return (dst);
 }
