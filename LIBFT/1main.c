@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 11:31:20 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/17 18:28:06 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/04/17 19:13:05 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int	main(int ac, char **av)
 	(void)ac;
 	(void)av[0];
 	printf("------------------------------------------------------------>\n");	
-	printf("M ----------->");
+	char dst6[10] = "abcd";
+	char const src6[20] = "1111";
+	printf("STRLCAT ----------->%lu\n", strlcat(dst6, src6, atoi(av[3])));
+	printf("FT_STRLCAT ----------->%lu\n", ft_strlcat(dst6, src6, atoi(av[3])));
 	printf("------------------------------------------------------------>\n");	
 	printf("MEMCHR -----------> %d\n", memcmp(av[1], av[2], atoi(av[3])));
 	printf("FT_MEMCHR -----------> %d\n", ft_memcmp(av[1], av[2], atoi(av[3])));
