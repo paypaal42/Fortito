@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 12:07:13 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/17 19:18:06 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/04/18 14:50:29 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
+char				*ft_strchr(const char *s, int c);
 
 typedef	struct		s_list
 {
