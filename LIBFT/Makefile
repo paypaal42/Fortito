@@ -1,45 +1,26 @@
 NAME = libft.a 
 
-FLAGS = -Werror -Wall -Wextra 
+CC = -Wall -Werror -Wextra
 
-CC = gcc
+SRC = $(wildcard ft_*.c)
 
-SRC_C = $(wildcard ft_*.c)
+OBJ = $(SRC:.c=.o)
 
-SRC_O = $(wildcard ft_*.o) 
+HEADER = .
 
-LIB = -L. -lft
-
-MAIN = 1main.c
-
-MAIN2 = 1main_copy.c
+VPATH = .
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(FLAGS) -c $(SRC_C)
-	ar rc $(NAME) $(SRC_O)
+$(NAME): $(SRC)
+	gcc -c $^ $(CC) -I $(HEADER)
+	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-main: 
-	$(CC) $(FLAGS) $(MAIN) $(LIB) && ./a.out
-
-main2: 
-	$(CC) $(FLAGS) $(MAIN2) $(LIB) && ./a.out
-
-clean: 
-	rm -rf *.o
-	rm -rf ./a.out
-	rm -rf .*.sw*
+clean:
+	rm -f *.o
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
-
-t: fclean all main
-
-tt: fclean all main2
-
-norme:
-	norminette -R CheckForbiddenSourceHeader $(SRC_C) libft.h
