@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 11:31:20 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/17 19:13:05 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/04/18 12:08:37 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	main(int ac, char **av)
 	printf("------------------------------------------------------------>\n");	
 	char dst6[10] = "abcd";
 	char const src6[20] = "1111";
-	printf("STRLCAT ----------->%lu\n", strlcat(dst6, src6, atoi(av[3])));
-	printf("FT_STRLCAT ----------->%lu\n", ft_strlcat(dst6, src6, atoi(av[3])));
-	printf("------------------------------------------------------------>\n");	
+	printf("STRLCAT ----------->%lu\n", strlcat(dst6, src6, atoi(av[1])));
+	printf("FT_STRLCAT ----------->%lu\n", ft_strlcat(dst6, src6, atoi(av[1])));
+/*	printf("------------------------------------------------------------>\n");	
 	printf("MEMCHR -----------> %d\n", memcmp(av[1], av[2], atoi(av[3])));
 	printf("FT_MEMCHR -----------> %d\n", ft_memcmp(av[1], av[2], atoi(av[3])));
 	printf("------------------------------------------------------------>\n");	
@@ -50,5 +50,6 @@ int	main(int ac, char **av)
 	char const src1[20] = "4444444444444444";
 	printf("MEMCPY --------> %s\n", memcpy(dst, src, atoi(av[1])));
 	printf("FT_MEMCPY -----> %s\n", ft_memcpy1(dst1, src1, atoi(av[2])));	
+*/
 	return (0);
 }
