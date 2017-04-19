@@ -6,25 +6,24 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 15:42:30 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/14 15:47:59 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/04/19 15:53:07 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "string.h"
 
+
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	size_t i;
+	unsigned int i;
 
 	i = 0;
-	while (i < len)
+	while (i < len && src[i])
 	{
-		if (src[i])
-			dst[i] = src[i];
-		else
-			dst[i] = '\0';
+		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
+	while (i < len)
+		dst[i++] = '\0';
 	return (dst);
 }
