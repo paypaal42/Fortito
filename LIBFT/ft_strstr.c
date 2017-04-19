@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/14 15:42:30 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/19 18:32:48 by pringsta         ###   ########.fr       */
+/*   Created: 2017/04/19 17:50:26 by pringsta          #+#    #+#             */
+/*   Updated: 2017/04/19 18:41:02 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "string.h"
+#include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+char	*ft_strstr(const char *big, const char *little)
 {
-	unsigned int i;
+	int i;
 
 	i = 0;
-	while (i < len && src[i])
+	if (!little[i])
+		return ((char*)big);
+	while (*big)
 	{
-		dst[i] = src[i];
-		i++;
+		while (big[i] == little[i] && big[i] && little[i])
+		{
+			if (little[i + 1] == '\0')
+				return ((char*)big);
+			i++;
+		}
+		i = 0;
+		big++;
 	}
-	while (i < len)
-		dst[i++] = '\0';
-	return (dst);
+	return (0);
 }
