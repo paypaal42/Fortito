@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 12:07:13 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/20 14:39:59 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/04/21 18:25:19 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,23 @@ char				*ft_strnstr(const char *big,
 					const char *little, size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_atoi(const char *str);
+int					ft_isalpha(int c);
+int					ft_isdigit(int c);
+int					ft_isalnum(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+int					ft_isascii(int c);
+int					ft_isprint(int c);
+void				ft_putnbr(int nb);
+void				*ft_memalloc(size_t size);
+void				ft_memdel(void **ap);
+char				*ft_strnew(size_t size);
+void				ft_strdel(char **as);
+void				ft_strclr(char *s);
+void				ft_striter(char *s, void (*f)(char*));
+void				ft_striteri(char *s, void (*f)(unsigned int, char *c));
+char				*ft_strmap(char const *s, char (*f)(char));
 
 typedef	struct		s_list
 {
