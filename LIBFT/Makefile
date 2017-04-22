@@ -13,7 +13,7 @@ VPATH = .
 all: $(NAME)
 
 $(NAME): $(SRC)
-	gcc -c $^ $(CC) -I $(HEADER)
+	gcc -g -c $^ $(CC) -I $(HEADER)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 

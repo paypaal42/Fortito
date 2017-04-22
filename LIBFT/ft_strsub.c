@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/21 19:16:08 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/22 14:03:14 by pringsta         ###   ########.fr       */
+/*   Created: 2017/04/22 14:20:15 by pringsta          #+#    #+#             */
+/*   Updated: 2017/04/22 18:03:45 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	char	*new_s;
+	char			*s_section;
+	unsigned int	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	if (!(new_s = (char*)malloc(sizeof(*new_s) * (i + 1))))
-		return (NULL);
-	i = 0;
-	while (s[i])
+	i = start;
+	if (!(s_section = (char*)malloc(sizeof(char) * (len) + 1)))
+		return (0);
+	while (i < (unsigned int)len + start)
 	{
-		new_s[i] = f(i, s[i]);
+		s_section[i - start] = s[i];
 		i++;
 	}
-	new_s[i] = '\0';
-	return (new_s);
+	s_section[i - start] = '\0';
+	return (s_section);
 }

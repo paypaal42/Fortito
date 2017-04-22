@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strtim.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/21 19:16:08 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/22 14:03:14 by pringsta         ###   ########.fr       */
+/*   Created: 2017/04/22 15:27:48 by pringsta          #+#    #+#             */
+/*   Updated: 2017/04/22 19:06:00 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strtrim(char const *s)
 {
-	int		i;
-	char	*new_s;
+	size_t	i;
+	size_t	start;
+	size_t	len;
+	size_t	end;
 
 	i = 0;
+	start = 0;
+	end = 0;
+	while (s[i] == '\n' || s[i] == ' ' || s[i] == '\t')
+		i++;
+	start = i;
 	while (s[i])
 		i++;
-	if (!(new_s = (char*)malloc(sizeof(*new_s) * (i + 1))))
-		return (NULL);
-	i = 0;
-	while (s[i])
+	i--;
+	while (s[i] == '\n' || s[i] == ' ' || s[i] == '\t')
 	{
-		new_s[i] = f(i, s[i]);
-		i++;
+		i--;
+		end++;
 	}
-	new_s[i] = '\0';
-	return (new_s);
+	len = i - start + 1;
+	return (start == 0 && end == 0) ? ((char*)s) : (ft_strsub(s, start, len));
+	if (s[start] == 0)
+		return (ft_strnew(0));
 }

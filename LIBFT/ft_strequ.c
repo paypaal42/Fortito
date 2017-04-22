@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   strequ.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/21 19:16:08 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/22 14:03:14 by pringsta         ###   ########.fr       */
+/*   Created: 2017/04/22 14:04:29 by pringsta          #+#    #+#             */
+/*   Updated: 2017/04/22 14:17:19 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_strequ(char const *s1, char const *s2)
 {
-	int		i;
-	char	*new_s;
+	int i;
 
 	i = 0;
-	while (s[i])
+	while (s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
-	if (!(new_s = (char*)malloc(sizeof(*new_s) * (i + 1))))
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		new_s[i] = f(i, s[i]);
-		i++;
-	}
-	new_s[i] = '\0';
-	return (new_s);
+	return (s1[i] - s2[i] == 0) ? (1) : (0);
 }

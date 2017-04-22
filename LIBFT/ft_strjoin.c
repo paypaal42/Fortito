@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/21 19:16:08 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/22 14:03:14 by pringsta         ###   ########.fr       */
+/*   Created: 2017/04/22 15:09:38 by pringsta          #+#    #+#             */
+/*   Updated: 2017/04/22 15:27:31 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	char	*new_s;
+	size_t	s_len;
+	size_t	i;
+	size_t	j;
+	char	*s_concat;
 
 	i = 0;
-	while (s[i])
-		i++;
-	if (!(new_s = (char*)malloc(sizeof(*new_s) * (i + 1))))
+	j = 0;
+	s_len = ft_strlen(s1) + ft_strlen(s2);
+	if (!(s_concat = (char*)malloc(sizeof(*s_concat) * (s_len + 1))))
 		return (NULL);
-	i = 0;
-	while (s[i])
+	while (s1[i])
 	{
-		new_s[i] = f(i, s[i]);
+		s_concat[i] = s1[i];
 		i++;
 	}
-	new_s[i] = '\0';
-	return (new_s);
+	while (s2[j])
+		s_concat[i++] = s2[j++];
+	s_concat[i] = '\0';
+	return (s_concat);
 }
