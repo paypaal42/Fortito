@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/24 10:21:52 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/24 15:27:02 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/05/01 11:53:45 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int			ft_nlen(int n)
 
 static char			*int_to_s(unsigned int n, int neg, int i)
 {
-	char	*s;
+	char			*s;
 
 	if (!(s = (char*)malloc(sizeof(*s) * ft_nlen(n) + neg + 1)))
 		return (NULL);
@@ -50,7 +50,7 @@ static char			*int_to_s(unsigned int n, int neg, int i)
 	return (s);
 }
 
-char			*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
 	int				i;
 	char			*s;

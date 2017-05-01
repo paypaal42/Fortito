@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/20 16:32:53 by pringsta          #+#    #+#             */
-/*   Updated: 2017/05/01 11:52:23 by pringsta         ###   ########.fr       */
+/*   Created: 2017/05/01 13:47:24 by pringsta          #+#    #+#             */
+/*   Updated: 2017/05/01 16:07:23 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	int		i;
-	int		negative;
-	long	nb;
+	unsigned int nb2;
 
-	i = 0;
-	negative = 1;
-	nb = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-			|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '-')
-		negative = -1;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while ('0' <= str[i] && str[i] <= '9')
+	if (nb < 0)
 	{
-		nb = nb * 10 + (str[i] - '0');
-		i++;
+		ft_putchar('-');
+		nb2 = nb * -1;
 	}
-	nb = nb * negative;
-	return ((int)nb);
+	else
+		nb2 = nb;
+	if (nb2 / 10)
+		ft_putnbr_fd(nb2 / 10, fd);
+	ft_putchar_fd(nb2 % 10 + '0', fd);
 }

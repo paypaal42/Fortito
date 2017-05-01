@@ -1,38 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/20 16:32:53 by pringsta          #+#    #+#             */
-/*   Updated: 2017/05/01 11:52:23 by pringsta         ###   ########.fr       */
+/*   Created: 2017/05/01 13:37:53 by pringsta          #+#    #+#             */
+/*   Updated: 2017/05/01 13:46:58 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	int		i;
-	int		negative;
-	long	nb;
-
-	i = 0;
-	negative = 1;
-	nb = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-			|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '-')
-		negative = -1;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while ('0' <= str[i] && str[i] <= '9')
-	{
-		nb = nb * 10 + (str[i] - '0');
-		i++;
-	}
-	nb = nb * negative;
-	return ((int)nb);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
