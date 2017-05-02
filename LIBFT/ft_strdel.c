@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/21 16:26:52 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/21 16:48:09 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/05/02 12:54:01 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void**)as);
+	if (as != NULL)
+		ft_memdel((void**)as);
 }

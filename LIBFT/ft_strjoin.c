@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/22 15:09:38 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/22 15:27:31 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/05/02 16:28:07 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
+	if (s1 == 0 || s2 == 0)
+		return (NULL);
 	s_len = ft_strlen(s1) + ft_strlen(s2);
 	if (!(s_concat = (char*)malloc(sizeof(*s_concat) * (s_len + 1))))
 		return (NULL);

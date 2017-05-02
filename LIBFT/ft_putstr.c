@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 11:10:34 by pringsta          #+#    #+#             */
-/*   Updated: 2017/05/01 11:25:11 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/05/02 16:26:15 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	ft_putstr(char const *s)
 	int i;
 
 	i = 0;
-	while (s[i])
-		ft_putchar(s[i++]);
+	if (s)
+	{
+		while (s[i])
+			ft_putchar(s[i++]);
+	}
 }

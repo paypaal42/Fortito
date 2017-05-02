@@ -6,15 +6,19 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/21 16:49:07 by pringsta          #+#    #+#             */
-/*   Updated: 2017/04/21 16:54:17 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/05/02 16:17:18 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_striter(char *s, void (*f)(char *))
 {
-	int i;
-
-	i = 0;
-	while (s[i])
-		f(&s[i++]);
+	if (s)
+	{
+		while (*s)
+		{
+			f(s++);
+		}
+	}
 }

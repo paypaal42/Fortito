@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 12:48:56 by pringsta          #+#    #+#             */
-/*   Updated: 2017/05/01 12:52:57 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/05/02 16:24:25 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ void	ft_putendl(char const *s)
 	int	i;
 
 	i = 0;
-	while (s[i])
-		ft_putchar(s[i++]);
-	ft_putchar('\n');
+	if (s)
+	{
+		while (s[i])
+			ft_putchar(s[i++]);
+		ft_putchar('\n');
+	}
 }
+
