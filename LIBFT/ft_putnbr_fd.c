@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/01 13:47:24 by pringsta          #+#    #+#             */
-/*   Updated: 2017/05/01 16:07:23 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/05/03 17:44:40 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void	ft_putnbr_fd(int nb, int fd)
 
 	if (nb < 0)
 	{
-		ft_putchar('-');
+		ft_putchar_fd('-', fd);
 		nb2 = nb * -1;
 	}
 	else
 		nb2 = nb;
 	if (nb2 / 10)
 		ft_putnbr_fd(nb2 / 10, fd);
-	ft_putchar_fd(nb2 % 10 + '0', fd);
+	ft_putchar_fd((nb2 % 10) + '0', fd);
 }
