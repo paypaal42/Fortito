@@ -54,6 +54,9 @@ SRC = \
 	  ft_strjoin.c \
 	  ft_strsplit.c \
 	  ft_strtrim.c \
+	  ft_lstnew.c \
+	  ft_lstiter.c \
+	  *.c \
 
 CC = -Wall -Werror -Wextra
 

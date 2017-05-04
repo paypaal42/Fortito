@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 12:07:13 by pringsta          #+#    #+#             */
-/*   Updated: 2017/05/03 17:57:08 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/05/04 18:20:14 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,10 @@ typedef	struct		s_list
 }					t_list;
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
-
+void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+void				ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 #endif
