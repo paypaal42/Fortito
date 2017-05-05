@@ -59,7 +59,10 @@ SRC = \
 	  ft_lstdelone.c \
 	  ft_lstadd.c \
 	  ft_lstiter.c \
-	  ft_lstmap.c  
+	  ft_lstmap.c \
+	  ft_power.c \
+	  ft_sqrt.c \
+	  ft_isspace.c  
 
 CC = -Wall -Werror -Wextra
 

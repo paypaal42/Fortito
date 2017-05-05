@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   ft_lssize.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/05 10:53:30 by pringsta          #+#    #+#             */
-/*   Updated: 2017/05/05 10:54:09 by pringsta         ###   ########.fr       */
+/*   Created: 2017/05/05 11:43:38 by pringsta          #+#    #+#             */
+/*   Updated: 2017/05/05 11:46:35 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_foreach(int *tab, int length, void (*f)(int))
+int	ft_lssize(t_list *list)
 {
 	int i;
 
 	i = 0;
-	while (i < length)
+	while (new)
 	{
-		f(tab[i]);
 		i++;
+		new = new->next;
 	}
+	return (i);
 }

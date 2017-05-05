@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 12:07:13 by pringsta          #+#    #+#             */
-/*   Updated: 2017/05/05 10:53:09 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/05/05 12:14:09 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int nb, int fd);
 int					ft_power(int nb, int power);
 int					ft_sqrt(int nb);
-void				ft_foreach(int *tab, int length, void (*f)(int));
+int					ft_isspace(char c);
 
 typedef	struct		s_list
 {
@@ -86,5 +86,7 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int					ft_lssize(t_list *list);
+t_list				*ft_lselement(t_list *beg_lst, unsigned int nbr);
 
 #endif
