@@ -6,7 +6,7 @@
 /*   By: pringsta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 14:59:53 by pringsta          #+#    #+#             */
-/*   Updated: 2017/05/21 13:27:02 by pringsta         ###   ########.fr       */
+/*   Updated: 2017/05/22 13:02:59 by pringsta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void		ft_list_foreach(t_list *begin_list, void (*f)(void *));
 void		ft_list_foreach_if(t_list *begin_list, void (*f)(void *), void *data_ref, int (*cmp)());
 t_list		*ft_list_find(t_list *begin_list, void *data_ref, int (*cmp)());
 void		ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)());
+void		ft_list_sort(t_list **begin_list, int (*cmp)());
 
 #endif
